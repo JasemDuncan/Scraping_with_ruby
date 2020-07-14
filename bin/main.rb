@@ -1,10 +1,11 @@
+require '../lib/web_scraper.rb'
 require 'nokogiri'
 require 'open-uri'
 
-html=open("https://elcomercio.pe/")
+# html=open("https://elcomercio.pe/")
 # html=open("https://www.vice.com/en_us/section/news")
 
-doc=Nokogiri::HTML(html)
+# doc=Nokogiri::HTML(html)
 
 # doc.search('.featured-story__detail').map do |element|
 #     puts element.inner_text
@@ -12,7 +13,22 @@ doc=Nokogiri::HTML(html)
 # end
 # puts '----OK arriba-----'
 # puts "/-----                                   "+doc.title
+web_scraper=Web_scraper.new
+category=web_scraper.category
+title=web_scraper.title
+author=web_scraper.author
+link=web_scraper.link
+title_web=web_scraper.title_web
 
+# (0...title0.size).each do 
+#     # print index
+#     puts category0
+# end
+
+# puts category0.to_s
+# puts title0
+# puts author0.to_s
+puts title_web
 puts "MMMMMWXXWNk:..;oxkxxKXx,..lKWMMMMMMMMMMMMWKXWNk:..;oxxdxXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMW0olONWWMMMMMMMMMMMMM"
 puts "MMWKxdkOdoc''....:dXWXc   'OWMMMMMMMMMWKxdkkdoc''...':xXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK;  .l0WMMMMMMMMMMMMM"
 puts "MKl,ckl..oxdKXKKXWMMMMO.  lNMMMMMMMMMKl,lxl..dkdKXKKXWMMMMMMMMMWWMMMMMMMMMWWWMMMMWWWMMMMWWMMMMMMMMMMMMWWMMMMMMWWMMMMWWMMMMMMWWWMMMWKolxKWMMMMMMMWWMMMMM"
@@ -24,39 +40,45 @@ puts ".  ,ko'lKWkdXMMMMMMMMMO.  lNMMMMMMMO.  ,ko,oKWkdNMMMMMMMMK;  ,KMNc  .OMMNc
 puts "d.  .;kWMMkdXMMMMMNOONO.  lNMMMMMMMNd.  .;kWMMkdNMMMMMNOO0;  ,0MNc  .OMMNc   '0MWo  .xMMx.  oWMMO.  ;KWMMMMMWd. .dWMMMMNc  .OMMMMMNl  .kMMNl  .kMWd.  ."
 puts "Nx.   .cx0dl0XKOxc;c0Nx.  ;0NWMMMMMMNx.   .cxOol0XKOdc;c00,  .o0Kc  .OMMX:   .kWNc  .dWMx.  lNWMk.  'xKNWKKNNc   cXNWMMX:  .oKNNXNNl  .xWWNc   :OKo.  ."
 puts "MWKo,.     ......:xNMNd'   ,dKWMMMMMMWKo,.     ......:kNW0c'.  ..',cxNMWk.   .lXO,   :KM0'  'xXNx,.   .:xOKWKl.   ;xXWW0:.   .:xOXWx.  :ONKl,.       .'"
-puts "MMMMXx:.     .,o0NMMMMWXd..oXMMMMMMMMMMMXx:..    .;o0WMMMWNXOl'.;kXWMMMMNx' .c0WNk,.:OWMWx'.oXMWNKOo'.'dXMMMMWKl.'dNMMMWXOo,..dXMMMNl.,kNMWWX0d,. 'dKWM"
+puts "MMMMMx:.     .,o0NMMMMWXd..oXMMMMMMMMMMMXx:..    .;o0WMMMWNXOl'.;kXWMMMMNx' .c0WNk,.:OWMWx'.oXMWNKOo'.'dXMMMMWKl.'dNMMMWXOo,..dXMMMNl.,kNMWWX0d,. 'dKWM"
+puts "MMMMM"
 
-
-doc.css('.featured-story__detail').each do |element|    
-    category    =element.css('.featured-story__category-link').inner_text
-    title       =element.css('.featured-story__title').inner_text
-    autor       =element.css('.featured-story__author').inner_text
-    link        =element.css('.featured-story__title-link')
-    puts ""
-    puts "                                                                               #{doc.title}"
-    puts " ______________________________________________________________________________#######################################################################"
-    puts "| Category:"
-    puts "|              #{category}"
-    puts "|-----------------------------------------------------------------------------------------------------------------------------------------------------"
-    puts "|           |                                                                                                                                       "
-    puts "| News:     |                                                                                                                                      "
-    puts "|-----------|                                  #{title.upcase}"
-    puts "|                                                                                                                                                  "
-    puts "|-----------------------------------------------------------------------------------------------------------------------------------------------------"
-    puts "| Autor:"
-    puts "|              #{autor}"
-    puts " -----------------------------------------------------------------------------------------------------------------------------------------------------"
-    puts "    "
+# (0...title.size).each do |el|
+    # puts title[el]
+    # puts category[el]
+# # end
+# doc.css('.featured-story__detail').each do |element|    
+#     category    =element.css('.featured-story__category-link').inner_text
+#     title       =element.css('.featured-story__title').inner_text
+#     autor       =element.css('.featured-story__author').inner_text
+#     link        =element.css('.featured-story__title-link')
+(0...title.size).each do |el|
+    # puts ""
+    puts "NNNNN                                                                          #{title_web}"
+    puts "NNNNN__________________________________________________________________________#######################################################################"
+    puts "NNNNN| Category:"
+    puts "NNNNN|              #{category[el].capitalize}"
+    puts "NNNNN.================.---------------------------------------------------------------------------------------------------------------.===============."
+    puts "NNNNN|                |                                                                                                               |               |"
+    puts "NNNNN|     NEWS:      |                                                                                                               |     NEWS:     |"
+    puts "NNNNN'================'                                                                                                               '==============='"
+    puts "NNNNN|                                              #{title[el].upcase}                                                                               "
+    puts "NNNNN|                                                                                                                                                "
+    puts "NNNNN|------------------------------------------------------------------------------------------------------------------------------------------------"
+    puts "NNNNN| Autor:"
+    puts "NNNNN|              #{author[el]}"
+    puts "NNNNN-------------------------------------------------------------------------------------------------------------------------------------------------"
+    puts "NNNNN"
 
 
 end
 
-puts "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWNx;;;;;;;;;;;;;:oxkkkd:,,dNNNWNNWNk;;;cdkkkkkkkkkkkkkkoc::l0WNNWWNNNOlok0XNWWNWWNKdllllllllllokKNWW"
+puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNx;;;;;;;;;;;;;:oxkkkd:,,dNNNWNNWNk;;;cdkkkkkkkkkkkkkkoc::l0WNNWWNNNOlok0XNWWNWWNKdllllllllllokKNWW"
 puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNk;;;;;;;;;;;,c0WMWWN0c,;dNWNNNWNXo;;l0Ooccc::::::cdxk0kc:ckNWWNNWWN0ollodxOKXXNNOlllllllllllxKNWNN"
-puts "WWWWWWW       THIS IS A SCRAPER       WWWWWWWWWWWWWNx;;;;;;;;;;;;xWMNkllc;;,dNNWWNNWXd;;kKo;:cokOOkxooxxcxKo:ckWNNWWNNNXOdllllloodxxdlllllllllloOWNNWW"
-puts "NNNNNNNNNNNNNNNNNWWWWWWWWNNNNNNNNNNNNNNNNNNNNNNNNNNNx;;;;;;;;;;;:kMMXo;;;;;;dNWNNWWWXd;:kKl;ck0xoooOK0d::xXd:ckNWWNNWWN0xdolllllllllllllllllllld0NWWNN"
-puts "WWWWWWNNNNNNNNNNJASEMVALENCIANNNNNNNNNNWWWWWWWWWWWWNx;,;;;;;;;xKKNMMWXKKd;;,dNNNWNNWXd:cOKo:xXk:cc:coO0c:xXd:cONNNWWNNNXOolllllllllllllllllllllkXNNNWW"
-puts "NNNNNNNNNNNNNNNNNWWWWWWWWNNNNNNNNNNNNNNNNNNNNNNNNNNNx;;;;;;;,:kXXWMMWNXXd;;;dNWNNNNWXxclOKdld00xolox0Kxc:xKd:ckNNWNNNNNNN0kdllllllllllllllllllxKNNNNNN"
+puts "NNNNNNN       THIS IS A SCRAPER       NNNNNNNNNNNNNNx;;;;;;;;;;;;xWMNkllc;;,dNNWWNNWXd;;kKo;:cokOOkxooxxcxKo:ckWNNWWNNNXOdllllloodxxdlllllllllloOWNNWW"
+puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNx;;;;;;;;;;;:kMMXo;;;;;;dNWNNWWWXd;:kKl;ck0xoooOK0d::xXd:ckNWWNNWWN0xdolllllllllllllllllllld0NWWNN"
+puts "NNNNNNNNNNNNNNNNJASEMVALENCIANNNNNNNNNNNNNNNNNNNNNNNx;,;;;;;;;xKKNMMWXKKd;;,dNNNWNNWXd:cOKo:xXk:cc:coO0c:xXd:cONNNWWNNNXOolllllllllllllllllllllkXNNNWW"
+puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNx;;;;;;;,:kXXWMMWNXXd;;;dNWNNNNWXxclOKdld00xolox0Kxc:xKd:ckNNWNNNNNNN0kdllllllllllllllllllxKNNNNNN"
 
 
 
