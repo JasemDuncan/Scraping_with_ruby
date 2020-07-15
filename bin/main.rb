@@ -9,6 +9,8 @@ title=web_scraper.title
 author=web_scraper.author
 link=web_scraper.link
 title_web=web_scraper.title_web
+option_list=web_scraper.option_list
+footer_sites=web_scraper.footer_sites
 
 puts "MMMMMWXXWNk:..;oxkxxKXx,..lKWMMMMMMMMMMMMWKXWNk:..;oxxdxXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMW0olONWWMMMMMMMMMMMMM"
 puts "MMWKxdkOdoc''....:dXWXc   'OWMMMMMMMMMWKxdkkdoc''...':xXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK;  .l0WMMMMMMMMMMMMM"
@@ -34,7 +36,7 @@ puts "MMMMM"
     puts "NNNNN|                |                                                                                                               |               |"
     puts "NNNNN|    NEWS:       |                                                                                                               |    NEWS:      |"
     puts "NNNNN'================'                                                                                                               '==============='"
-    puts "NNNNN|                                          #{title[el].upcase}                        "
+    puts "NNNNN|                                          #{title[el].upcase}"
     puts "NNNNN|                                                                                                                                                "
     puts "NNNNN|------------------------------------------------------------------------------------------------------------------------------------------------"
     puts "NNNNN| Autor:"
@@ -42,10 +44,33 @@ puts "MMMMM"
     puts "NNNNN-------------------------------------------------------------------------------------------------------------------------------------------------"
     puts "NNNNN"    
 end
-puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNx;;;;;;;;;;;;;:oxkkkd:,,dNNNWNNWNk;;;cdkkkkkkkkkkkkkkoc::l0WNNWWNNNOlok0XNWWNWWNKdllllllllllokKNWW"
-puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNk;;;;;;;;;;;,c0WMWWN0c,;dNWNNNWNXo;;l0Ooccc::::::cdxk0kc:ckNWWNNWWN0ollodxOKXXNNOlllllllllllxKNWNN"
-puts "NNNNNNN       THIS IS A SCRAPER       NNNNNNNNNNNNNNx;;;;;;;;;;;;xWMNkllc;;,dNNWWNNWXd;;kKo;:cokOOkxooxxcxKo:ckWNNWWNNNXOdllllloodxxdlllllllllloOWNNWW"
-puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNx;;;;;;;;;;;:kMMXo;;;;;;dNWNNWWWXd;:kKl;ck0xoooOK0d::xXd:ckNWWNNWWN0xdolllllllllllllllllllld0NWWNN"
-puts "NNNNNNNNNNNNNNNNJASEMVALENCIANNNNNNNNNNNNNNNNNNNNNNNx;,;;;;;;;xKKNMMWXKKd;;,dNNNWNNWXd:cOKo:xXk:cc:coO0c:xXd:cONNNWWNNNXOolllllllllllllllllllllkXNNNWW"
-puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNx;;;;;;;,:kXXWMMWNXXd;;;dNWNNNNWXxclOKdld00xolox0Kxc:xKd:ckNNWNNNNNNN0kdllllllllllllllllllxKNNNNNN"
+puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+puts "NNNNN                                                                                                                                            NNNNN"    
+puts "NNNNN                                                     WHAT YOU HAVE TO KNOW !                                                                NNNNN"  
+puts "NNNNN                                                                                                                                            NNNNN"      
+puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+(0...option_list.size).each do |el|
+    puts "NNNNN                           * #{option_list[el]}"
+end
+puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+puts "NNNNN                                                                                                                                            NNNNN"    
+puts "NNNNN                                                     YOU CAN VISIT ALSO :                                                                   NNNNN"  
+puts "NNNNN                                                                                                                                            NNNNN"      
+puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+puts "                                                                                                                                                      "    
+puts "                                                                                                                                                      "    
+(0...footer_sites.size).each do |el|  
+     print "  www.#{footer_sites[el]}  " 
+end
+puts ""
+puts "                                                                                                                                                      "      
+puts "                                                                                                                                                      "    
+puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN   #{title_web}"
+puts "NNNNNNN       THIS IS A SCRAPER       NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNJASEMVALENCIA"
 
+f = File.new('../bin/out.txt', 'w')
+f << $stdout.
+
+f.close

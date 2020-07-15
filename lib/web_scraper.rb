@@ -6,11 +6,13 @@ class Web_scraper
     def initialize
         html=open("https://elcomercio.pe")        
         @doc=Nokogiri::HTML(html)
-        # print @doc
+        # puts @doc
+        # puts 'asdasd'
     end
 
     def title_web
-        title_web=@doc.title
+        title_web=@doc.title   
+        # puts title_web 
     end
     def category        
         category=@doc.css('.featured-story__detail').css('.featured-story__category-link').children.map(&:text)           
@@ -23,5 +25,11 @@ class Web_scraper
     end
     def link
         link=@doc.css('.featured-story__detail').css('.featured-story__title-link')
+    end
+    def option_list
+        option_list=@doc.css('.sep-opt__list').css('.sep-opt__title').children.map(&:text)        
+    end
+    def footer_sites
+        footer_sites=@doc.css('.footer__sites-item').children.map(&:text)
     end
 end
