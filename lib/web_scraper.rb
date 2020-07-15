@@ -3,19 +3,17 @@ require 'nokogiri'
 
 class Web_scraper
     attr_reader:doc
+
     def initialize
-        html=open("https://elcomercio.pe")        
-        @doc=Nokogiri::HTML(html)
-        # puts @doc
-        # puts 'asdasd'
+        html=URI.open("https://elcomercio.pe")        
+        @doc=Nokogiri::HTML(html) 
     end
 
     def title_web
-        title_web=@doc.title   
-        # puts title_web 
+        title_web=@doc.title
     end
     def category        
-        category=@doc.css('.featured-story__detail').css('.featured-story__category-link').children.map(&:text)           
+        category=@doc.css('.featured-story__detail').css('.featured-story__category-link').children.map(&:text)                                      
     end
     def title
         title=@doc.css('.featured-story__detail').css('.featured-story__title').children.map(&:text) 

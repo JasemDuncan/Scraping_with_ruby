@@ -31,7 +31,7 @@ puts "MMMMM"
     puts "NNNNN                                                                           #{title_web}"
     puts "NNNNN__________________________________________________________________________########################################################################"
     puts "NNNNN| Category:"
-    puts "NNNNN|              #{category[el].capitalize}"
+    puts "NNNNN|              #{category[el]}"
     puts "NNNNN.================.---------------------------------------------------------------------------------------------------------------.===============."
     puts "NNNNN|                |                                                                                                               |               |"
     puts "NNNNN|    NEWS:       |                                                                                                               |    NEWS:      |"
@@ -41,8 +41,10 @@ puts "MMMMM"
     puts "NNNNN|------------------------------------------------------------------------------------------------------------------------------------------------"
     puts "NNNNN| Autor:"
     puts "NNNNN|              #{author[el]}"
+    puts "NNNNN| Link:  "
+    puts "NNNNN| https://elcomercio.pe/#{link[el].attributes['href'].value }"  
     puts "NNNNN-------------------------------------------------------------------------------------------------------------------------------------------------"
-    puts "NNNNN"    
+    puts "NNNNN"       
 end
 puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
 puts "NNNNN                                                                                                                                            NNNNN"    
@@ -65,12 +67,12 @@ end
 puts ""
 puts "                                                                                                                                                      "      
 puts "                                                                                                                                                      "    
-puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN   #{title_web}"
-puts "NNNNNNN       THIS IS A SCRAPER       NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
-puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN       #{title_web}"
+puts "THIS IS A SCRAPER       NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
 puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNJASEMVALENCIA"
 
-f = File.new('../bin/out.txt', 'w')
-f << $stdout.
 
-f.close
+# f = File.new('../bin/out.txt', 'w')
+# f << $stdout.
+
+# f.close
