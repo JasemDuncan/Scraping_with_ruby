@@ -1,6 +1,7 @@
 require '../lib/web_scraper.rb'
 require 'nokogiri'
 require 'open-uri'
+require 'csv'
 
 
 web_scraper=Web_scraper.new
@@ -76,3 +77,64 @@ puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 # f << $stdout.
 
 # f.close
+# puts footer_sites.map{|string|string.upcase}
+#headers = option_list.map{|string|string.upcase}
+# a=Array.new
+
+# a=["2"]
+# # print a
+# CSV.open("myfile.csv", "w", :col_sep => "\t| ", :headers => true) do |csv|
+#     csv << headers
+#     csv << ["-"*(headers.join.length+4*headers.length)] #Header separator in the length of header columns + tabs
+#     # a.each {|row| csv << row } #Adding rows for each element of a
+#     csv<< footer_sites[]
+#   end
+# puts option_list
+# puts option_list.map{|string|string.upcase}
+#   a = [
+#     [title_web,"#{Time.now.strftime("%d/%m/%Y %H:%M") }"],
+#     [123,"Tue, 30 Jun 2015 23:50:55 KST +09:00"]
+#   ]
+
+#   headers = ["NEWS", "autor"]
+# CSV.open("myfile.csv", "w", :col_sep => "\t| ", :headers => true) do |csv|
+#   csv << headers
+#   csv << ["-"*(headers.join.length+4*headers.length)] #Header separator in the length of header columns + tabs
+#   a.each {|row| csv << row } #Adding rows for each element of a
+# end
+# puts option_list
+# puts option_list.map{|string|string.upcase}
+
+  a =
+["MMMMMMWXXWNk:..;oxkxxKXx,..lKWMMMMMMMMMMMMWKXWNk:..;oxxdxXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMW0olONWWMMMMMMMMMMMMM'"],
+["MMWKxdkOdoc''....:dXWXc   'OWMMMMMMMMMWKxdkkdoc''...':xXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK;  .l0WMMMMMMMMMMMMM"],
+["MKl,ckl..oxdKXKKXWMMMMO.  lNMMMMMMMMMKl,lxl..dkdKXKKXWMMMMMMMMMWWMMMMMMMMMWWWMMMMWWWMMMMWWMMMMMMMMMMMMWWMMMMMMWWMMMMWWMMMMMMWWWMMMWKolxKWMMMMMMMWWMMMMM"],
+["O,.lXx.  okdXMMMMMMMMMO.  lNMMMMMMMWO'.lXd. .dkdNMMMMMMMMMMWNOl;;ok0XWMW0o;,c0WNOc;oKMWOc;dKK0NMMMWKkl;:kNMMXx;:kNKd;l0XNWNOc,cxKWNk:;o0WMMMMN0d;;lx0XM"],
+[", '0Wd.  ::'lOKKOKWMMMO.  lWMMMMMMMK, ,KWd. .dkdNMMMMMMMMNk:'      .;0W0l.   'dkc.  ,xkc.  .c0WMXo,.,;. .:0Kd'  .ll.  ,dxc'...  :Kk'   cXMW0c.      .kM"],
+["  ;KWd.  ..   .:xXMMMMO.  lWMMMMMMWx. ;XWd. .dkdNMMMMMMMMK;  ,0NO,  .OWWX:   .xNXc  .lXNo.  lWMMO.  cKk;  ,ONo   oN0xkKXc  .xOoo0WNc  .kMMNl  .kN0c   ."],
+["  .kWd. ,kd;ldOXWMMMMMO.  lWMMMMMMWd. .kWd. ,0kdNMMMMMMMMK;  ,KMNc  .OMMNc   '0MWo  .xMMx.  oWMMO.  cXXklo0NWd. .dWMMMMNc  .OMMMMMNl  .kMMNl  .kMWd.  ."],
+[".  ,ko'lKWkdXMMMMMMMMMO.  lNMMMMMMMO.  ,ko,oKWkdNMMMMMMMMK;  ,KMNc  .OMMNc   '0MWo  .xMMx.  oWMMO.  ,xO0NMMMWd. .dWMMMMNc  .OMMMMMNl  .kMMNl  .kMWd.  ."],
+["d.  .;kWMMkdXMMMMMNOONO.  lNMMMMMMMNd.  .;kWMMkdNMMMMMNOO0;  ,0MNc  .OMMNc   '0MWo  .xMMx.  oWMMO.  ;KWMMMMMWd. .dWMMMMNc  .OMMMMMNl  .kMMNl  .kMWd.  ."],
+["Nx.   .cx0dl0XKOxc;c0Nx.  ;0NWMMMMMMNx.   .cxOol0XKOdc;c00,  .o0Kc  .OMMX:   .kWNc  .dWMx.  lNWMk.  'xKNWKKNNc   cXNWMMX:  .oKNNXNNl  .xWWNc   :OKo.  ."],
+["MWKo,.     ......:xNMNd'   ,dKWMMMMMMWKo,.     ......:kNW0c'.  ..',cxNMWk.   .lXO,   :KM0'  'xXNx,.   .:xOKWKl.   ;xXWW0:.   .:xOXWx.  :ONKl,.       .'"],
+["MMMMMx:.     .,o0NMMMMWXd..oXMMMMMMMMMMMXx:..    .;o0WMMMWNXOl'.;kXWMMMMNx' .c0WNk,.:OWMWx'.oXMWNKOo'.'dXMMMMWKl.'dNMMMWXOo,..dXMMMNl.,kNMWWX0d,. 'dKWM"],
+
+["#{Time.now.strftime("%d/%m/%Y %H:%M") }"],[title_web]
+
+(0...option_list.size).each do|el| 
+     a.push([option_list[el].to_s],["-"*(option_list[el].length+3)])
+    puts option_list[el].to_s
+  end
+  a.push(
+    ["NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN       #{title_web}"],
+    ["NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN       THIS IS A SCRAPER       NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"],
+    ["NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNJASEMVALENCIA"]
+  )
+  headers = ["----- RUBY SCRAPER -----"]
+CSV.open("myfile.csv", "w", :col_sep => "\t| ", :headers => true) do |csv|
+  csv << ["-"*(headers.join.length+4*headers.length)] 
+  csv << headers
+  csv << ["-"*(headers.join.length+4*headers.length)] 
+
+  a.each {|row| csv << row }
+end
