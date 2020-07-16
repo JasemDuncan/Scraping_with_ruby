@@ -1,14 +1,11 @@
 require 'open-uri'
 require 'nokogiri'
 
-class Web_scraper
-    attr_reader:doc
-
+class Web_scraper    
     def initialize
         html=URI.open("https://elcomercio.pe")        
         @doc=Nokogiri::HTML(html) 
     end
-
     def title_web
         title_web=@doc.title
     end

@@ -1,7 +1,5 @@
-require '../lib/web_scraper.rb'
-require '../lib/csv.rb'
-
-
+require_relative '../lib/web_scraper.rb'
+require_relative '../lib/csv.rb'
 
 web_scraper=Web_scraper.new
 category=web_scraper.category
