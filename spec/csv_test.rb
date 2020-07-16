@@ -1,8 +1,8 @@
 require '../lib/csv.rb'
 
-describe CSV_writer do
+describe CsvWriter do
   let!(:all) do
-    @csv = CSV_writer.new
+    @csv = CsvWriter.new
   end
   describe 'write' do
     it 'Testing if write is not empty' do

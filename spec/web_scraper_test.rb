@@ -1,8 +1,8 @@
 require '../lib/web_scraper.rb'
 
-describe Web_scraper do
+describe WebScraper do
   let!(:all) do
-    @web_scraper = Web_scraper.new
+    @web_scraper = WebScraper.new
   end
   describe 'initialize' do
     it 'Testing if it is not empty' do
