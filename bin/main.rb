@@ -1,7 +1,6 @@
 require '../lib/web_scraper.rb'
-require 'nokogiri'
-require 'open-uri'
-require 'csv'
+require '../lib/csv.rb'
+
 
 
 web_scraper=Web_scraper.new
@@ -73,39 +72,7 @@ puts "THIS IS A SCRAPER       NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNJASEMVALENCIA"
 
 
-# f = File.new('../bin/out.txt', 'w')
-# f << $stdout.
-
-# f.close
-# puts footer_sites.map{|string|string.upcase}
-#headers = option_list.map{|string|string.upcase}
-# a=Array.new
-
-# a=["2"]
-# # print a
-# CSV.open("myfile.csv", "w", :col_sep => "\t| ", :headers => true) do |csv|
-#     csv << headers
-#     csv << ["-"*(headers.join.length+4*headers.length)] #Header separator in the length of header columns + tabs
-#     # a.each {|row| csv << row } #Adding rows for each element of a
-#     csv<< footer_sites[]
-#   end
-# puts option_list
-# puts option_list.map{|string|string.upcase}
-#   a = [
-#     [title_web,"#{Time.now.strftime("%d/%m/%Y %H:%M") }"],
-#     [123,"Tue, 30 Jun 2015 23:50:55 KST +09:00"]
-#   ]
-
-#   headers = ["NEWS", "autor"]
-# CSV.open("myfile.csv", "w", :col_sep => "\t| ", :headers => true) do |csv|
-#   csv << headers
-#   csv << ["-"*(headers.join.length+4*headers.length)] #Header separator in the length of header columns + tabs
-#   a.each {|row| csv << row } #Adding rows for each element of a
-# end
-# puts option_list
-# puts option_list.map{|string|string.upcase}
-
-  a =
+a =
 ["MMMMMMWXXWNk:..;oxkxxKXx,..lKWMMMMMMMMMMMMWKXWNk:..;oxxdxXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMW0olONWWMMMMMMMMMMMMM'"],
 ["MMWKxdkOdoc''....:dXWXc   'OWMMMMMMMMMWKxdkkdoc''...':xXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMK;  .l0WMMMMMMMMMMMMM"],
 ["MKl,ckl..oxdKXKKXWMMMMO.  lNMMMMMMMMMKl,lxl..dkdKXKKXWMMMMMMMMMWWMMMMMMMMMWWWMMMMWWWMMMMWWMMMMMMMMMMMMWWMMMMMMWWMMMMWWMMMMMMWWWMMMWKolxKWMMMMMMMWWMMMMM"],
@@ -123,18 +90,13 @@ puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 
 (0...option_list.size).each do|el| 
      a.push([option_list[el].to_s],["-"*(option_list[el].length+3)])
-    puts option_list[el].to_s
   end
-  a.push(
-    ["NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN       #{title_web}"],
-    ["NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN       THIS IS A SCRAPER       NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"],
-    ["NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNJASEMVALENCIA"]
-  )
-  headers = ["----- RUBY SCRAPER -----"]
-CSV.open("myfile.csv", "w", :col_sep => "\t| ", :headers => true) do |csv|
-  csv << ["-"*(headers.join.length+4*headers.length)] 
-  csv << headers
-  csv << ["-"*(headers.join.length+4*headers.length)] 
+a.push(
+  ["NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN       #{title_web}"],
+  ["NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN       THIS IS A SCRAPER       NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"],
+  ["NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNJASEMVALENCIA"]
+)
 
-  a.each {|row| csv << row }
-end
+write_csv=CSV_writer.new()
+write_csv.write(a)
+
