@@ -1,4 +1,4 @@
-require '../lib/web_scraper.rb'
+require_relative '../lib/web_scraper.rb'
 
 describe WebScraper do
   let!(:all) do
@@ -8,6 +8,9 @@ describe WebScraper do
     it 'Testing if it is not empty' do
       expect(@web_scraper).to_not eq(' ')
     end
+    it 'Test if initialization returns an object' do
+      expect(@web_scraper.class).to eq(WebScraper)
+    end
   end
   describe 'title_web' do
     it 'Testing if title web is not empty' do
@@ -16,7 +19,7 @@ describe WebScraper do
   end
   describe 'title_web' do
     it 'Testing if title web is not empty' do
-      expect(@web_scraper.title_web).to eq('Noticias de última hora del Perú y el Mundo | NOTICIAS EL COMERCIO PERÚ')
+      expect(@web_scraper.title_web).to be_an(String)
     end
   end
   describe 'category' do
@@ -69,4 +72,5 @@ describe WebScraper do
       expect(@web_scraper.title_web).to_not eq(Array[])
     end
   end
+
 end

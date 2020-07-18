@@ -26,7 +26,7 @@ puts 'MMMMM'
 (0...title.size).each do |el|
   puts "NNNNN                                                                                                                                  ------ #{el.to_i + 1} ------"
   puts "NNNNN                                                                                                         Current Time: (UTC -5)   #{Time.now.strftime('%d/%m/%Y %H:%M')}"
-  puts "NNNNN                                                                           #{title_web}"
+  puts "NNNNN                                                                                                                      #{title_web.slice(0..27)}"
   puts 'NNNNN__________________________________________________________________________########################################################################'
   puts 'NNNNN| Category:'
   puts "NNNNN|              #{category[el]}"
@@ -65,7 +65,7 @@ end
 puts ''
 puts '                                                                                                                                                      '
 puts '                                                                                                                                                      '
-puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN       #{title_web}"
+puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN       #{title_web.slice(0..27)}"
 puts 'THIS IS A SCRAPER       NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN'
 puts 'NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNJASEMVALENCIA'
 
@@ -83,13 +83,13 @@ a =
   ["MWKo,.     ......:xNMNd'   ,dKWMMMMMMWKo,.     ......:kNW0c'.  ..',cxNMWk.   .lXO,   :KM0'  'xXNx,.   .:xOKWKl.   ;xXWW0:.   .:xOXWx.  :ONKl,.       .'"],
   ["MMMMMx:.     .,o0NMMMMWXd..oXMMMMMMMMMMMXx:..    .;o0WMMMWNXOl'.;kXWMMMMNx' .c0WNk,.:OWMWx'.oXMWNKOo'.'dXMMMMWKl.'dNMMMWXOo,..dXMMMNl.,kNMWWX0d,. 'dKWM"],
 
-  [Time.now.strftime('%d/%m/%Y %H:%M').to_s], [title_web]
+  [Time.now.strftime('%d/%m/%Y %H:%M').to_s], [title_web.slice(0..27)]
 
 (0...option_list.size).each do |el|
   a.push([option_list[el].to_s], ['-' * (option_list[el].length + 3)])
 end
 a.push(
-  ["NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN       #{title_web}"],
+  ["NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN       #{title_web.slice(0..27)}"],
   ['NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN       THIS IS A SCRAPER       NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN'],
   ['NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNJASEMVALENCIA']
 )

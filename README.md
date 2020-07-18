@@ -1,19 +1,24 @@
 # Scraping_with_ruby    🚀 
 This a scraper using Ruby and also after scraping the web it export a CSV file into the csv folder.
 
+I chose to scraper  **"EL Comercio"**  because it is the most important newspaper in my country for more than 181 years since its creation. This newspaper has generated a lot of discrepancy among citizens in recent years.
+
 Definition:
-"Data scraping is a technique in which a computer program extracts data from human-readable output coming from another program."
 
-The web page that I scraped is: 
+*"Data scraping is a technique in which a computer program extracts data from human-readable output coming from another program."*
 
->- https://elcomercio.pe/
+The web page that I scraped is:
+
+> https://elcomercio.pe/
 ​
 ## Instructions to Run it on Your Local Machine
 ​
 To have a version on you local machine:
 - Clone this repository.
 - Open a terminal on the containing folder of this project.
-- Execute bin/main.rb on the project folder within your terminal.
+- Install all the dependencies with this command​ on the terminal:
+> bundle install
+
 ​
 ## Live Demo
 - You can also use the Live Demo to see it on action.
@@ -22,7 +27,7 @@ To have a version on you local machine:
 ​
 ## Instructions
 - Execute the following instruction on terminal.
->- ruby main.rb
+> ruby bin/main.rb
 
 ![screenshot](./img/scraper1.png)
 ![screenshot](./img/scraper2.png)
@@ -41,19 +46,15 @@ To have a version on you local machine:
 
 ## RSpec Testing
 
-This folder contains a file to test the methods the csv_test.rb and web_scraper_test.rb files.
-To run the tests you will need to install the RSpec Gem
-You can do it running the following command on your terminal machine:
+This folder contains a file to test the methods the csv_spec.rb and web_scraper_spec.rb files.
 
->- gem install rspec
+Run the following command to check the results.
 
-After successfully installed the Gem you can access the spec folder and run the following command to check the results.
-
->- rspec spec/csv_test.rb
+> rspec spec/csv_spec.rb
 
 To test the csv class methods.
 
->- rspec spec/web_scraper_test.rb
+> rspec spec/web_scraper_spec.rb
 
 To test the web_scraper class methods.
 
