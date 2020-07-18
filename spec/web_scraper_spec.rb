@@ -72,5 +72,4 @@ describe WebScraper do
       expect(@web_scraper.title_web).to_not eq(Array[])
     end
   end
-
 end

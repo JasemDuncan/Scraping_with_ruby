@@ -1,6 +1,5 @@
 require 'csv'
 class CsvWriter
-
   def write(aaa)
     headers = ['----- RUBY SCRAPER -----']
     CSV.open('./csv/myfile.csv', 'w', col_sep: "\t| ", headers: true) do |csv|
